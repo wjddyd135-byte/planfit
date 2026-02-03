@@ -1,0 +1,97 @@
+@charset "utf-8";
+
+
+.menu-page .section-title{
+  font-size:20px;
+  font-weight:900;
+  margin:24px 0 12px;
+}
+
+.menu-page .quick-grid{
+  display:grid;
+  gap:16px;
+}
+@media (min-width:860px){
+  .menu-page .quick-grid{
+    grid-template-columns:1fr 1fr;
+  }
+}
+
+.menu-page .menu-card{
+  position:relative;
+  overflow:hidden;
+  padding:0;
+  border-radius:20px;
+  background:linear-gradient(
+    180deg,
+    rgba(255,255,255,.06),
+    rgba(255,255,255,0)
+  );
+}
+
+.menu-page .menu-card .thumb{
+  height:160px;
+  margin:0;
+  border:none;
+  border-radius:20px 20px 0 0;
+}
+
+.menu-page .menu-card .content{
+  padding:16px;
+}
+
+.menu-page .menu-card h3{
+  font-size:16px;
+  font-weight:900;
+  margin:0;
+}
+
+.menu-page .menu-card p{
+  margin:6px 0 0;
+  font-size:13px;
+  color:var(--muted);
+}
+
+.menu-page .menu-action{
+  position:absolute;
+  right:14px;
+  bottom:14px;
+
+  padding:6px 12px;
+  border-radius:999px;
+  font-size:12px;
+  font-weight:800;
+
+  background:var(--accent);
+  color:#0b1012;
+}
+
+.menu-page .menu-card:hover{
+  transform:translateY(-2px);
+  box-shadow:0 14px 40px rgba(0,0,0,.45);
+}
+.menu-page .menu-card{
+  transition:transform .2s ease, box-shadow .2s ease;
+}
+
+.menu-page .goal-grid{
+  display:grid;
+  gap:12px;
+}
+@media (min-width:860px){
+  .menu-page .goal-grid{
+    grid-template-columns:1fr 1fr;
+  }
+}
+
+.menu-page .goal-card{
+  padding:18px;
+}
+.menu-page .goal-card h4{
+  margin:0;
+  font-size:15px;
+  font-weight:900;
+}
+.menu-page .goal-card .small{
+  margin-top:6px;
+}

@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Planfit - Record</title>
+  <link rel="stylesheet" href="styles/style.css" />
+  <link rel="stylesheet" href="styles/record.css" />
+</head>
+
+<body>
+  <div class="app">
+
+    <aside class="sidebar">
+      <div class="brand">Planfit</div>
+      <nav class="side-nav" aria-label="사이드 메뉴">
+        <a href="index.html">홈</a>
+        <a href="menu.html">메뉴</a>
+        <a href="start.html">운동 시작</a>
+        <a class="active" href="record.html" aria-current="page">기록</a>
+        <a href="mypage.html">마이</a>
+      </nav>
+    </aside>
+
+    <div class="main">
+      <header class="header">
+        <div class="header-inner">
+          <h1 class="page-title">운동 기록</h1>
+          <div class="row" style="justify-content:flex-end;">
+            <button class="pill" id="btnPrev" type="button" aria-label="이전 날짜">◀</button>
+            <button class="pill" id="btnToday" type="button">오늘</button>
+            <button class="pill" id="btnNext" type="button" aria-label="다음 날짜">▶</button>
+          </div>
+        </div>
+      </header>
+
+      <main class="content">
+
+        <section class="grid-2" aria-labelledby="summaryTitle">
+          <h2 id="summaryTitle" class="sr-only">기록 요약</h2>
+
+          <div class="card stat">
+            <h3 class="sr-only">주간 운동 횟수</h3>
+
+            <div class="muted">이번 주 운동 횟수</div>
+            <div class="num"><span id="weekCount">0</span>회</div>
+
+            <div
+              class="bar"
+              role="progressbar"
+              aria-label="주간 달성률"
+              aria-valuemin="0"
+              aria-valuemax="100"
+              aria-valuenow="0"
+              id="weekProgress"
+            >
+              <i id="weekBar"></i>
+            </div>
+
+            <div class="muted">목표: 주 <span id="weekGoal">3</span>회</div>
+          </div>
+
+          <div class="card stat">
+            <h3 class="sr-only">선택한 날짜 요약</h3>
+
+            <div class="muted">선택한 날짜</div>
+            <div class="num" id="pickedDate">-</div>
+
+            <div class="muted">완료 운동 / 총 운동</div>
+            <div style="display:flex; gap:10px; align-items:center;">
+              <div
+                class="bar"
+                role="progressbar"
+                aria-label="일일 완료율"
+                aria-valuemin="0"
+                aria-valuemax="100"
+                aria-valuenow="0"
+                id="dayProgress"
+                style="flex:1;"
+              >
+                <i id="dayBar"></i>
+              </div>
+              <div style="font-weight:800;">
+                <span id="doneCount">0</span>/<span id="totalCount">0</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="card" style="margin-top:12px;" aria-labelledby="recordListTitle">
+          <h2 id="recordListTitle" class="section-title">기록 리스트</h2>
+
+          <div class="row">
+            <div>
+              <div class="muted">체크하면 자동 저장돼요 (localStorage)</div>
+            </div>
+            <span class="tag" id="dayTag">REST</span>
+          </div>
+
+          <div class="list" id="recordList" aria-live="polite"></div>
+
+          <button class="btn" id="btnAddMock" type="button">샘플 기록 추가</button>
+        </section>
+
+      </main>
+    </div>
+
+    <nav class="bottom-nav" aria-label="하단 메뉴">
+      <div class="bottom-nav-inner">
+        <a class="tab" href="index.html" aria-label="홈">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10.5L12 3l9 7.5V21a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1z"/></svg>
+          <span>홈</span>
+        </a>
+
+        <a class="tab" href="menu.html" aria-label="메뉴">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+          <span>메뉴</span>
+        </a>
+
+        <a class="tab" href="start.html" aria-label="시작">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v18M3 12h18"/></svg>
+          <span>시작</span>
+        </a>
+
+        <a class="tab" href="mypage.html" aria-label="마이">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 12a5 5 0 1 0-5-5 5 5 0 0 0 5 5zm0 2c-4 0-8 2-8 5v1h16v-1c0-3-4-5-8-5z"/></svg>
+          <span>마이</span>
+        </a>
+      </div>
+    </nav>
+  </div>
+  <script src="js/record.js"></script>
+</body>
+</html>

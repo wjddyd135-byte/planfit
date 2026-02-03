@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Planfit - Routine</title>
+  <link rel="stylesheet" href="styles/style.css" />
+</head>
+
+<body>
+  <div class="app">
+
+    <aside class="sidebar">
+      <div class="brand">Planfit</div>
+      <nav class="side-nav" aria-label="사이드 메뉴">
+        <a href="index.html">홈</a>
+        <a class="active" href="menu.html">메뉴</a>
+        <a href="start.html">운동 시작</a>
+        <a href="record.html">기록</a>
+        <a href="mypage.html">마이</a>
+      </nav>
+    </aside>
+
+    <div>
+      <header class="header">
+        <div class="header-inner">
+          <div class="title">루틴</div>
+          <div class="icon-row">
+            <button class="icon-btn" type="button" aria-label="search">🔍</button>
+            <a class="icon-btn" href="settings.html" aria-label="설정">⚙️</a>
+            <a class="icon-btn" href="menu.html" aria-label="menu">☰</a>
+            <a class="icon-btn" href="login.html" aria-label="login">👤</a>
+          </div>
+        </div>
+      </header>
+
+      <main class="main">
+        <div class="container">
+          <p class="small">목표/시간/부위로 루틴을 골라요</p>
+          <h1 class="h1">다른 루틴 보기</h1>
+
+          <section class="card" style="margin-top:12px;">
+            <h2 class="sr-only">루틴 필터</h2>
+
+            <div style="display:flex;gap:10px;flex-wrap:wrap;">
+              <button class="chip" type="button" data-filter="all">전체</button>
+              <button class="chip" type="button" data-filter="goal-loss">체중 감량</button>
+              <button class="chip" type="button" data-filter="goal-muscle">근육 증가</button>
+              <button class="chip" type="button" data-filter="goal-fit">체력 향상</button>
+              <button class="chip" type="button" data-filter="goal-stretch">스트레칭</button>
+            </div>
+
+            <div style="display:flex;gap:10px;margin-top:12px;flex-wrap:wrap;">
+              <button class="chip" type="button" data-filter="time-15">15분</button>
+              <button class="chip" type="button" data-filter="time-30">30분</button>
+              <button class="chip" type="button" data-filter="time-45">45분+</button>
+
+              <span style="opacity:.5;align-self:center;">|</span>
+
+              <button class="chip" type="button" data-filter="part-upper">상체</button>
+              <button class="chip" type="button" data-filter="part-lower">하체</button>
+              <button class="chip" type="button" data-filter="part-core">코어</button>
+              <button class="chip" type="button" data-filter="part-full">전신</button>
+            </div>
+
+            <div style="display:flex;gap:10px;margin-top:12px;">
+              <button class="btn btn-ghost" id="resetBtn" type="button" style="width:auto;padding:10px 14px;border-radius:14px;">
+                필터 초기화
+              </button>
+              <div class="small" id="countText" style="align-self:center;opacity:.8;"></div>
+            </div>
+          </section>
+
+          <section class="grid-2" style="margin-top:12px;">
+            <h2 class="sr-only">루틴 목록</h2>
+
+            <article class="card routine-card" data-tags="goal-muscle time-30 part-upper">
+              <h3 class="sr-only">상체 + 코어 (35분)</h3>
+
+              <div class="thumb">
+                <img src="images/upperbody.jpg" alt="상체 루틴 이미지">
+              </div>
+
+              <div style="display:flex;justify-content:space-between;gap:12px;align-items:flex-start;">
+                <div>
+                  <h4 style="font-weight:900;margin:0;">상체 + 코어 (35분)</h4>
+                  <div class="sub">벤치프레스 · 랫풀다운 · 숄더프레스 · 플랭크</div>
+                </div>
+                <span class="chip">추천</span>
+              </div>
+
+              <div class="chips">
+                <div class="chip">운동 6개</div>
+                <div class="chip">세트 18</div>
+                <div class="chip">휴식 60s</div>
+              </div>
+
+              <div style="display:flex;gap:10px;margin-top:12px;">
+                <a class="btn btn-primary" href="start.html" style="flex:1;text-align:center;">시작</a>
+                <button class="btn btn-ghost favBtn" type="button" style="flex:1;">☆ 즐겨찾기</button>
+              </div>
+            </article>
+
+            <article class="card routine-card" data-tags="goal-loss time-30 part-full">
+              <h3 class="sr-only">전신 서킷 (30분)</h3>
+
+              <div class="thumb">
+                <img src="images/fullbody.jpg" alt="전신 루틴 이미지">
+              </div>
+
+              <div style="display:flex;justify-content:space-between;gap:12px;align-items:flex-start;">
+                <div>
+                  <h4 style="font-weight:900;margin:0;">전신 서킷 (30분)</h4>
+                  <div class="sub">버피 · 스쿼트 · 푸쉬업 · 마운틴클라이머</div>
+                </div>
+                <span class="chip">감량</span>
+              </div>
+
+              <div class="chips">
+                <div class="chip">운동 8개</div>
+                <div class="chip">라운드 4</div>
+                <div class="chip">휴식 30s</div>
+              </div>
+
+              <div style="display:flex;gap:10px;margin-top:12px;">
+                <a class="btn btn-primary" href="start.html" style="flex:1;text-align:center;">시작</a>
+                <button class="btn btn-ghost favBtn" type="button" style="flex:1;">☆ 즐겨찾기</button>
+              </div>
+            </article>
+
+            <article class="card routine-card" data-tags="goal-muscle time-45 part-lower">
+              <h3 class="sr-only">하체 집중 (50분)</h3>
+
+              <div class="thumb">
+                <img src="images/lowerbody.jpg" alt="하체 루틴 이미지">
+              </div>
+
+              <div style="display:flex;justify-content:space-between;gap:12px;align-items:flex-start;">
+                <div>
+                  <h4 style="font-weight:900;margin:0;">하체 집중 (50분)</h4>
+                  <div class="sub">스쿼트 · 런지 · 레그프레스 · 레그컬</div>
+                </div>
+                <span class="chip">하체</span>
+              </div>
+
+              <div class="chips">
+                <div class="chip">운동 6개</div>
+                <div class="chip">세트 20</div>
+                <div class="chip">휴식 60s</div>
+              </div>
+
+              <div style="display:flex;gap:10px;margin-top:12px;">
+                <a class="btn btn-primary" href="start.html" style="flex:1;text-align:center;">시작</a>
+                <button class="btn btn-ghost favBtn" type="button" style="flex:1;">☆ 즐겨찾기</button>
+              </div>
+            </article>
+
+            <article class="card routine-card" data-tags="goal-stretch time-15 part-core">
+              <h3 class="sr-only">코어 & 스트레칭 (15분)</h3>
+
+              <div class="thumb thumb-sm">
+                <img src="images/stretch.jpg" alt="스트레칭 이미지">
+              </div>
+
+              <div style="display:flex;justify-content:space-between;gap:12px;align-items:flex-start;">
+                <div>
+                  <h4 style="font-weight:900;margin:0;">코어 & 스트레칭 (15분)</h4>
+                  <div class="sub">데드버그 · 플랭크 · 햄스트링 스트레치</div>
+                </div>
+                <span class="chip">회복</span>
+              </div>
+
+              <div class="chips">
+                <div class="chip">운동 5개</div>
+                <div class="chip">세트 10</div>
+                <div class="chip">휴식 짧게</div>
+              </div>
+
+              <div style="display:flex;gap:10px;margin-top:12px;">
+                <a class="btn btn-primary" href="start.html" style="flex:1;text-align:center;">시작</a>
+                <button class="btn btn-ghost favBtn" type="button" style="flex:1;">☆ 즐겨찾기</button>
+              </div>
+            </article>
+
+          </section>
+        </div>
+      </main>
+
+      <nav class="bottom-nav" aria-label="하단 메뉴">
+        <div class="bottom-nav-inner">
+
+          <a class="tab" href="index.html" aria-label="홈">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M3 10.5L12 3l9 7.5V21a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1z" />
+            </svg>
+            <span>홈</span>
+          </a>
+
+          <a class="tab active" href="menu.html" aria-label="메뉴">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+            <span>메뉴</span>
+          </a>
+
+          <a class="tab" href="start.html" aria-label="시작">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 3v18M3 12h18" />
+            </svg>
+            <span>시작</span>
+          </a>
+
+          <a class="tab" href="mypage.html" aria-label="마이">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 12a5 5 0 1 0-5-5 5 5 0 0 0 5 5zm0 2c-4 0-8 2-8 5v1h16v-1c0-3-4-5-8-5z" />
+            </svg>
+            <span>마이</span>
+          </a>
+
+        </div>
+      </nav>
+
+    </div>
+  </div>
+
+  <script>
+    const chips = Array.from(document.querySelectorAll('[data-filter]'));
+    const cards = Array.from(document.querySelectorAll('.routine-card'));
+    const countText = document.getElementById('countText');
+    const resetBtn = document.getElementById('resetBtn');
+
+    const active = new Set(['all']);
+
+    function syncChipUI(){
+      chips.forEach(btn => {
+        const key = btn.dataset.filter;
+        if(active.has(key)){
+          btn.style.borderColor = 'var(--mint)';
+          btn.style.color = 'var(--mint)';
+        } else {
+          btn.style.borderColor = '';
+          btn.style.color = '';
+        }
+      });
+    }
+
+    function matches(card){
+      const tags = (card.dataset.tags || '').split(' ').filter(Boolean);
+      if(active.has('all')) return true;
+      for(const key of active){
+        if(tags.includes(key)) return true;
+      }
+      return false;
+    }
+
+    function render(){
+      let shown = 0;
+      cards.forEach(card => {
+        const ok = matches(card);
+        card.style.display = ok ? '' : 'none';
+        if(ok) shown += 1;
+      });
+      countText.textContent = `표시 중: ${shown}개`;
+      syncChipUI();
+    }
+
+    chips.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const key = btn.dataset.filter;
+
+        if(key === 'all'){
+          active.clear();
+          active.add('all');
+        } else {
+          active.delete('all');
+          if(active.has(key)) active.delete(key);
+          else active.add(key);
+          if(active.size === 0) active.add('all');
+        }
+        render();
+      });
+    });
+
+    resetBtn.addEventListener('click', () => {
+      active.clear();
+      active.add('all');
+      render();
+    });
+
+    const favBtns = Array.from(document.querySelectorAll('.favBtn'));
+
+    function loadFav(){
+      try { return JSON.parse(localStorage.getItem('planfit_favs') || '[]'); }
+      catch(e){ return []; }
+    }
+    function saveFav(list){
+      localStorage.setItem('planfit_favs', JSON.stringify(list));
+    }
+    function setFavUI(){
+      const favs = new Set(loadFav());
+      cards.forEach((card, idx) => {
+        const title = card.querySelector('h4')?.textContent?.trim() || `routine_${idx}`;
+        const btn = card.querySelector('.favBtn');
+        const isFav = favs.has(title);
+        btn.textContent = isFav ? '★ 즐겨찾기' : '☆ 즐겨찾기';
+        btn.style.color = isFav ? 'var(--mint)' : '';
+        btn.dataset.key = title;
+      });
+    }
+
+    favBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const favs = new Set(loadFav());
+        const key = btn.dataset.key;
+        if(!key) return;
+        if(favs.has(key)) favs.delete(key);
+        else favs.add(key);
+        saveFav(Array.from(favs));
+        setFavUI();
+      });
+    });
+
+    render();
+    setFavUI();
+  </script>
+</body>
+</html>
