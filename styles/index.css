@@ -1,0 +1,88 @@
+@charset "utf-8";
+
+.index-page .container{ max-width: 980px; }
+
+.index-page .hero{
+  overflow:hidden;
+  border-radius: 22px;
+  border: 1px solid rgba(255,255,255,.06);
+  background: rgba(255,255,255,.03);
+  box-shadow: 0 14px 34px rgba(0,0,0,.32);
+}
+.index-page .hero img{
+  width:100%;
+  height:260px;
+  object-fit:cover;
+  display:block;
+}
+
+.index-page .h1{
+  margin: 18px 0 0;
+  font-size: 22px;
+  font-weight: 900;
+  letter-spacing: -0.2px;
+}
+.index-page .small{ color: var(--muted); }
+
+.index-page .grid-2{
+  display:grid;
+  gap:16px;
+}
+@media (min-width: 860px){
+  .index-page .grid-2{ grid-template-columns: 1fr 1fr; }
+}
+
+.index-page .main .card{
+  border-radius: 22px;
+  border: 1px solid rgba(255,255,255,.06);
+  background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,0));
+  box-shadow: 0 10px 26px rgba(0,0,0,.22);
+  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+}
+.index-page .main .card:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 16px 44px rgba(0,0,0,.42);
+  border-color: rgba(255,255,255,.12);
+}
+
+.index-page .main .card .thumb{
+  height: 160px;
+  overflow:hidden;
+  border-radius: 22px 22px 0 0;
+  background: rgba(255,255,255,.04);
+}
+.index-page .main .card .thumb.thumb-sm{ height: 140px; }
+
+.index-page .main .card .thumb img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+  transform: scale(1);
+  transition: transform .35s ease;
+}
+.index-page .main .card:hover .thumb img{
+  transform: scale(1.04);
+}
+
+.index-page .main .card > div:not(.thumb),
+.index-page .main .card > p,
+.index-page .main .card > .chips{
+  padding-left: 16px;
+  padding-right: 16px;
+}
+.index-page .main .card > div:not(.thumb){ padding-top: 12px; }
+.index-page .main .card > p{ margin: 8px 0 0; }
+.index-page .main .card > .chips{ padding-top: 10px; padding-bottom: 6px; }
+
+.index-page .main .card .grid-2 .card{
+  padding: 14px;
+  box-shadow: none !important;
+  border-radius: 18px;
+  background: rgba(255,255,255,.03);
+  border: 1px solid rgba(255,255,255,.06);
+  transform: none !important;
+}
+.index-page .main .card .grid-2 .card:hover{
+  background: rgba(143,209,199,.12);
+}

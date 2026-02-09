@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Planfit - 회원가입</title>
+  <link rel="stylesheet" href="styles/style.css" />
+  <link rel="stylesheet" href="styles/signup.css">
+  <script src="js/signup.js"></script>
+</head>
+
+<body>
+  <div class="app">
+
+    <aside class="sidebar">
+      <div class="brand">Planfit</div>
+      <nav class="side-nav" aria-label="사이드 메뉴">
+        <a href="index.html">홈</a>
+        <a href="menu.html">메뉴</a>
+        <a href="start.html">운동 시작</a>
+        <a href="record.html">기록</a>
+        <a class="active" href="signup.html">회원가입</a>
+        <a href="mypage.html">마이</a>
+      </nav>
+    </aside>
+
+    <div class="content">
+      <header class="header">
+        <div class="header-inner">
+          <div class="title">회원가입</div>
+          <div class="icon-row">
+            <a class="icon-btn" href="login.html" aria-label="로그인으로 이동">👤</a>
+          </div>
+        </div>
+      </header>
+
+      <main class="wrap">
+        <section class="auth-card" aria-labelledby="signupTitle">
+          <div class="auth-head">
+            <div class="brandmark">
+              <div class="logo" aria-hidden="true">PF</div>
+              <div class="brand-title">
+                <div id="signupTitle" class="name">Planfit 가입하기</div>
+                <div class="desc">나만의 루틴을 저장하고, 기록을 쌓아보세요.</div>
+              </div>
+            </div>
+          </div>
+
+          <form class="form" action="#" method="post">
+            <div class="field">
+              <label class="label" for="email">이메일</label>
+              <input class="input" id="email" name="email" type="email" placeholder="example@planfit.com" autocomplete="email" required />
+            </div>
+
+            <div class="row">
+              <div class="field">
+                <label class="label" for="password">비밀번호</label>
+                <input class="input" id="password" name="password" type="password" placeholder="8자 이상" autocomplete="new-password" minlength="8" required />
+              </div>
+
+              <div class="field">
+                <label class="label" for="password2">비밀번호 확인</label>
+                <input class="input" id="password2" name="password2" type="password" placeholder="비밀번호 다시 입력" autocomplete="new-password" minlength="8" required />
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="field">
+                <label class="label" for="nickname">닉네임</label>
+                <input class="input" id="nickname" name="nickname" type="text" placeholder="예: OO" autocomplete="nickname" required />
+              </div>
+
+              <div class="field">
+                <label class="label" for="goal">운동 목표</label>
+                <select class="input" id="goal" name="goal" required>
+                  <option value="" selected disabled>선택</option>
+                  <option value="muscle">근육 증가</option>
+                  <option value="diet">체지방 감량</option>
+                  <option value="maintain">컨디션 유지</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="agree">
+              <input id="agree" name="agree" type="checkbox" required />
+              <label class="txt" for="agree">
+                (필수) 서비스 이용을 위한 약관/개인정보 처리에 동의합니다.  
+                <span style="display:block;margin-top:4px;">
+                  * 포트폴리오용 프로젝트로, 실제 결제/회원정보 저장은 구현되지 않을 수 있어요.
+                </span>
+              </label>
+            </div>
+
+            <button class="btn-primary" type="submit">회원가입</button>
+
+            <div class="help">
+              <span>이미 계정이 있나요? <a href="login.html">로그인</a></span>
+              <span><a href="index.html">홈으로</a></span>
+            </div>
+
+            <div class="portfolio-note">
+              본 서비스는 Planfit 회원가입 서비스입니다.<br>
+              실제 연결은 되지 않습니다.
+            </div>
+          </form>
+        </section>
+      </main>
+    </div>
+  </div>
+</body>
+</html>

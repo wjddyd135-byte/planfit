@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Planfit - Login</title>
+  <link rel="stylesheet" href="styles/style.css" />
+  <link rel="stylesheet" href="styles/login.css" />
+</head>
+
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <div class="brand">Planfit</div>
+      <nav class="side-nav">
+        <a href="index.html">홈</a>
+        <a href="menu.html">메뉴</a>
+        <a href="start.html">운동 시작</a>
+        <a href="record.html">기록</a>
+        <a class="active" href="login.html">마이</a>
+      </nav>
+    </aside>
+
+    <div>
+      <header class="header">
+        <div class="header-inner">
+          <div class="title">Planfit</div>
+          <div class="icon-row">
+            <button class="icon-btn" aria-label="search">🔍</button>
+            <a class="icon-btn" href="menu.html" aria-label="menu">☰</a>
+            <a class="icon-btn" href="login.html" aria-label="login">👤</a>
+          </div>
+        </div>
+      </header>
+
+      <main class="main">
+        <div class="container">
+          <section class="card login-card">
+            <div class="login-top">
+              <div class="login-badge">Planfit</div>
+              <h1 class="login-title">login</h1>
+              <p class="login-sub">아이디와 비밀번호로 로그인하세요</p>
+            </div>
+
+            <form class="login-form" action="#" method="post">
+              <div class="field">
+                <label class="small" for="id">ID</label>
+                <input class="input" id="id" name="id" type="text" placeholder="아이디" autocomplete="username" />
+              </div>
+
+              <div class="field">
+                <label class="small" for="pw">PASSWORD</label>
+                <input class="input" id="pw" name="pw" type="password" placeholder="비밀번호"
+                  autocomplete="current-password" />
+              </div>
+
+              <div class="login-row">
+                <label class="remember">
+                  <input id="remember" type="checkbox">
+                  로그인 유지
+                </label>
+                <a class="link" href="#">비밀번호 찾기</a>
+              </div>
+
+              <button class="btn btn-primary" type="submit">login</button>
+
+              <div class="or">
+                <span></span><em>또는</em><span></span>
+              </div>
+
+              <div class="social">
+                <button class="btn btn-ghost" type="button">
+                  <span class="dot dot-n"></span> 네이버로 로그인
+                </button>
+                <button class="btn btn-ghost" type="button">
+                  <span class="dot dot-k"></span> 카카오로 로그인
+                </button>
+                <button class="btn btn-ghost" type="button">
+                  <span class="dot dot-g"></span> 구글로 로그인
+                </button>
+              </div>
+
+              <div class="signup">
+                아직 계정이 없나요? <a class="link" href="signup.html">회원가입</a>
+              </div>
+            </form>
+          </section>
+        </div>
+      </main>
+
+      <nav class="bottom-nav">
+        <div class="bottom-nav-inner">
+
+          <a class="tab" href="index.html" aria-label="홈">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M3 10.5L12 3l9 7.5V21a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1z" />
+            </svg>
+            <span>홈</span>
+          </a>
+
+          <a class="tab" href="menu.html" aria-label="메뉴">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+            <span>메뉴</span>
+          </a>
+
+          <a class="tab" href="start.html" aria-label="시작">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 3v18M3 12h18" />
+            </svg>
+            <span>시작</span>
+          </a>
+
+          <a class="tab active" href="login.html" aria-label="마이">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 12a5 5 0 1 0-5-5 5 5 0 0 0 5 5zm0 2c-4 0-8 2-8 5v1h16v-1c0-3-4-5-8-5z" />
+            </svg>
+            <span>마이</span>
+          </a>
+
+        </div>
+      </nav>
+
+    </div>
+  </div>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const loginForm = document.querySelector(".login-form");
+    if (!loginForm) return;
+
+    loginForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      const emailOrId = document.getElementById("id").value.trim(); 
+      const password = document.getElementById("pw").value;
+      const remember = document.getElementById("remember")?.checked;
+
+      const users = JSON.parse(localStorage.getItem("planfit_users")) || [];
+
+      const user = users.find(u => u.email === emailOrId);
+
+      if (!user) {
+        alert("가입된 계정을 찾을 수 없어요. 회원가입을 먼저 해주세요.");
+        return;
+      }
+
+      if (user.password !== password) {
+        alert("비밀번호가 올바르지 않습니다.");
+        return;
+      }
+
+      const storage = remember ? localStorage : sessionStorage;
+      storage.setItem("planfit_current_user", JSON.stringify({
+        email: user.email,
+        nickname: user.nickname,
+        goal: user.goal,
+        loggedInAt: new Date().toISOString()
+      }));
+
+      localStorage.setItem("planfit_logged_in", "1");
+
+      alert(`${user.nickname}님 환영합니다!`);
+      location.href = "mypage.html";
+    });
+  });
+</script>
+</body>
+</html>

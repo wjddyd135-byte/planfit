@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Planfit - Menu</title>
+  <link rel="stylesheet" href="styles/style.css" />
+  <link rel="stylesheet" href="styles/menu.css">
+</head>
+
+<body class="page-home menu-page">
+  <div class="app">
+    <aside class="sidebar">
+      <div class="brand">Planfit</div>
+      <nav class="side-nav" aria-label="사이드 메뉴">
+        <a href="index.html">홈</a>
+        <a class="active" href="menu.html">메뉴</a>
+        <a href="start.html">운동 시작</a>
+        <a href="record.html">기록</a>
+        <a href="mypage.html">마이</a>
+      </nav>
+    </aside>
+
+    <div>
+      <header class="header">
+        <div class="header-inner">
+          <div class="title">메뉴</div>
+          <div class="icon-row">
+            <button class="icon-btn" type="button" aria-label="search">🔍</button>
+            <a class="icon-btn" href="settings.html" aria-label="설정">⚙️</a>
+            <button class="icon-btn" type="button" aria-label="menu">☰</button>
+            <a class="icon-btn" href="login.html" aria-label="login">👤</a>
+          </div>
+        </div>
+      </header>
+
+      <main class="main">
+        <div class="container">
+          <p class="small">원하는 기능을 선택하세요</p>
+          <h1 class="h1">빠른 메뉴</h1>
+
+          <section class="grid-2" style="margin-top:12px;">
+            <h2 class="sr-only">빠른 메뉴 목록</h2>
+
+            <a class="card" href="routine.html">
+              <div class="thumb">
+                <img src="images/routine3.jpg" alt="루틴 보기 이미지">
+              </div>
+              <div style="display:flex;justify-content:space-between;gap:10px;align-items:flex-start;">
+                <div>
+                  <div style="font-weight:800;">루틴 보기</div>
+                  <p class="sub">추천/즐겨찾기 루틴 확인</p>
+                  <div class="small">목표 · 시간 · 부위 필터</div>
+                </div>
+                <span class="chip">설정</span>
+              </div>
+            </a>
+
+            <a class="card" href="start.html">
+              <div class="thumb">
+                <img src="images/start.jpg" alt="운동 시작 이미지">
+              </div>
+              <div style="display:flex;justify-content:space-between;gap:10px;align-items:flex-start;">
+                <div>
+                  <div style="font-weight:800;">운동 시작</div>
+                  <p class="sub">오늘의 루틴으로 바로</p>
+                  <div class="small">세트 · 휴식 타이머 포함</div>
+                </div>
+                <span class="chip">시작</span>
+              </div>
+            </a>
+
+            <a class="card" href="#">
+              <div class="thumb">
+                <img src="images/routine2.jpg" alt="장비 등록 이미지">
+              </div>
+              <div style="display:flex;justify-content:space-between;gap:10px;align-items:flex-start;">
+                <div>
+                  <div style="font-weight:800;">장비 등록</div>
+                  <p class="sub">내 헬스장 기구 선택</p>
+                  <div class="small">추천 정확도 향상</div>
+                </div>
+                <span class="chip">설정</span>
+              </div>
+            </a>
+
+            <a class="card" href="#">
+              <div class="thumb thumb-sm">
+                <img src="images/guide.jpg" alt="운동 가이드 이미지">
+              </div>
+              <div style="display:flex;justify-content:space-between;gap:10px;align-items:flex-start;">
+                <div>
+                  <div style="font-weight:800;">운동 가이드</div>
+                  <p class="sub">영상으로 자세 확인</p>
+                  <div class="small">초보자 추천</div>
+                </div>
+                <span class="chip">영상</span>
+              </div>
+            </a>
+          </section>
+
+          <h2 class="h1" style="margin-top:28px;">목표별 추천</h2>
+          <p class="small">지금 목표에 맞는 루틴을 골라보세요</p>
+
+          <section class="grid-2" style="margin-top:12px;">
+            <h3 class="sr-only">목표별 루틴 목록</h3>
+
+            <a class="card" href="start.html">
+              <div style="font-weight:800;">체중 감량</div>
+              <p class="sub">유산소 + 전신</p>
+              <div class="small">30~40분 · 초중급</div>
+            </a>
+
+            <a class="card" href="start.html">
+              <div style="font-weight:800;">근육 증가</div>
+              <p class="sub">분할 웨이트</p>
+              <div class="small">45~60분 · 중급</div>
+            </a>
+
+            <a class="card" href="start.html">
+              <div style="font-weight:800;">체력 향상</div>
+              <p class="sub">서킷 · 인터벌</p>
+              <div class="small">20~30분 · 전레벨</div>
+            </a>
+
+            <a class="card" href="start.html">
+              <div style="font-weight:800;">스트레칭</div>
+              <p class="sub">회복 · 유연성</p>
+              <div class="small">10~15분</div>
+            </a>
+          </section>
+
+          <h2 class="h1" style="margin-top:28px;">내 활동</h2>
+          <p class="small">저장 및 기록 관리</p>
+
+          <section class="grid-2" style="margin-top:12px;">
+            <h3 class="sr-only">내 활동 목록</h3>
+
+            <a class="card" href="login.html">
+              <div style="font-weight:800;">즐겨찾기 루틴</div>
+              <p class="sub">저장한 루틴 보기</p>
+              <div class="small">로그인 필요</div>
+            </a>
+
+            <a class="card" href="login.html">
+              <div style="font-weight:800;">운동 기록</div>
+              <p class="sub">최근 히스토리</p>
+              <div class="small">주/월 요약</div>
+            </a>
+          </section>
+
+          <h2 class="h1" style="margin-top:28px;">도움 & 설정</h2>
+          <p class="small">환경 설정 및 지원</p>
+
+          <section class="grid-2" style="margin-top:12px;">
+            <h3 class="sr-only">도움 및 설정 목록</h3>
+
+            <a class="card" href="#">
+              <div style="font-weight:800;">알림 설정</div>
+              <p class="sub">운동 리마인드</p>
+              <div class="small">시간/요일</div>
+            </a>
+
+            <a class="card" href="#">
+              <div style="font-weight:800;">프로필 설정</div>
+              <p class="sub">신체 정보 수정</p>
+              <div class="small">추천 정확도 향상</div>
+            </a>
+
+            <a class="card" href="#">
+              <div style="font-weight:800;">문의하기</div>
+              <p class="sub">버그 · 피드백</p>
+              <div class="small">이메일/폼</div>
+            </a>
+
+            <a class="card" href="#">
+              <div style="font-weight:800;">앱 정보</div>
+              <p class="sub">버전 정보</p>
+              <div class="small">Planfit v1.0</div>
+            </a>
+          </section>
+
+        </div>
+      </main>
+
+      <footer class="footer" role="contentinfo" aria-label="하단 정보">
+        <div class="footer-inner">
+          <div class="footer-links">
+            <a href="privacy.html">개인정보처리방침</a>
+            <span class="sep" aria-hidden="true">|</span>
+            <a href="terms.html">이용약관</a>
+          </div>
+          <p class="footer-desc">Planfit은 더 나은 운동 루틴 경험을 위해 설계된 서비스입니다.</p>
+          <p class="footer-copy">Copyright © 2026 Planfit. All rights reserved.</p>
+        </div>
+      </footer>
+
+      <nav class="bottom-nav" aria-label="하단 메뉴">
+        <div class="bottom-nav-inner">
+          <a class="tab" href="index.html" aria-label="홈">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M3 10.5L12 3l9 7.5V21a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1z" />
+            </svg>
+            <span>홈</span>
+          </a>
+          <a class="tab active" href="menu.html" aria-label="메뉴">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+            <span>메뉴</span>
+          </a>
+          <a class="tab" href="start.html" aria-label="시작">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 3v18M3 12h18" />
+            </svg>
+            <span>시작</span>
+          </a>
+          <a class="tab" href="mypage.html" aria-label="마이">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 12a5 5 0 1 0-5-5 5 5 0 0 0 5 5zm0 2c-4 0-8 2-8 5v1h16v-1c0-3-4-5-8-5z" />
+            </svg>
+            <span>마이</span>
+          </a>
+        </div>
+      </nav>
+    </div>
+  </div>
+</body>
+</html>
