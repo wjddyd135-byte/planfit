@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Planfit - Settings</title>
+  <link rel="stylesheet" href="styles/style.css" />
+  <link rel="stylesheet" href="styles/settings.css">
+</head>
+
+<body>
+  <div class="app">
+
+    <aside class="sidebar">
+      <div class="brand">Planfit</div>
+      <nav class="side-nav" aria-label="사이드 메뉴">
+        <a href="index.html">홈</a>
+        <a href="menu.html">메뉴</a>
+        <a href="start.html">운동 시작</a>
+        <a href="routine.html">루틴</a>
+        <a href="record.html">기록</a>
+        <a href="mypage.html">마이</a>
+        <a class="active" href="settings.html" aria-current="page">설정</a>
+      </nav>
+    </aside>
+
+    <div class="main">
+      <header class="header">
+        <div class="header-inner">
+          <div>
+            <div class="h1">설정</div>
+            <div class="sub">목표/테마/데이터를 관리할 수 있어요</div>
+          </div>
+          <div class="icon-row">
+            <a class="icon-btn" href="mypage.html" aria-label="마이로 이동">↩</a>
+          </div>
+        </div>
+      </header>
+
+      <main class="container">
+
+        <section class="card" aria-labelledby="secGoalTitle">
+          <h2 id="secGoalTitle" class="section-title">목표</h2>
+          <p class="sub" style="margin-top:8px;">
+            기록 페이지의 <strong>주간 목표(주 N회)</strong>에 반영돼요.
+          </p>
+
+          <div class="field">
+            <label for="weekGoalInput" class="small">주간 목표 운동 횟수</label>
+            <input
+              id="weekGoalInput"
+              class="input"
+              type="number"
+              min="1"
+              max="14"
+              step="1"
+              inputmode="numeric"
+              aria-describedby="weekGoalHelp"
+              value="3"
+              placeholder="예: 3"
+            />
+            <div id="weekGoalHelp" class="small">추천: 3~5회</div>
+          </div>
+
+          <div class="row" style="display:flex; gap:10px; margin-top:14px; align-items:center;">
+            <button class="btn btn-primary" id="btnSaveGoal" type="button">저장</button>
+            <span class="tag" id="goalTag" aria-live="polite">미저장</span>
+          </div>
+
+          <div class="small" id="goalHint" style="margin-top:8px; color:var(--muted);">
+            값을 바꾸고 저장을 눌러주세요.
+          </div>
+        </section>
+
+        <section class="card" aria-labelledby="secUiTitle">
+          <h2 id="secUiTitle" class="section-title">UI</h2>
+          <p class="sub" style="margin-top:8px;">
+            포인트 컬러와 컴팩트 모드를 설정할 수 있어요.
+          </p>
+
+          <div class="grid-2" style="margin-top:12px;">
+            <div class="field" style="margin-top:0;">
+              <label for="accentSelect" class="small">포인트 컬러</label>
+              <select id="accentSelect" class="input" aria-label="포인트 컬러 선택">
+                <option value="mint">Mint (기본)</option>
+                <option value="blue">Blue</option>
+                <option value="purple">Purple</option>
+                <option value="orange">Orange</option>
+              </select>
+              <div class="small">적용하면 버튼/태그/활성 탭 색이 바뀌어요.</div>
+            </div>
+
+            <div class="field" style="margin-top:0;">
+              <div class="small">레이아웃</div>
+              <label style="display:flex; gap:10px; align-items:center; padding:10px 12px; border:1px solid var(--line); border-radius:14px; background:rgba(255,255,255,.03); cursor:pointer;">
+                <input id="compactMode" type="checkbox" />
+                <span>컴팩트 모드(간격 줄이기)</span>
+              </label>
+              <div class="small">리스트/카드 간격이 촘촘해져요.</div>
+            </div>
+          </div>
+
+          <div class="row" style="display:flex; gap:10px; margin-top:14px; align-items:center;">
+            <button class="btn btn-ghost" id="btnApplyUi" type="button">적용</button>
+            <span class="tag" id="uiTag" aria-live="polite">기본값</span>
+          </div>
+
+          <div class="card" style="margin-top:12px; background:var(--panel-2);">
+            <h3 class="sr-only">미리보기</h3>
+            <div class="row" style="display:flex; justify-content:space-between; align-items:center; gap:12px;">
+              <div>
+                <div style="font-weight:900;">미리보기</div>
+                <div class="small">태그/버튼이 포인트 컬러로 반영돼요</div>
+              </div>
+              <span class="tag">TAG</span>
+            </div>
+            <button class="btn btn-primary" type="button" style="margin-top:12px;" aria-label="미리보기 버튼">
+              버튼 미리보기
+            </button>
+          </div>
+        </section>
+
+        <section class="card" aria-labelledby="secDataTitle">
+          <h2 id="secDataTitle" class="section-title">데이터</h2>
+          <p class="sub" style="margin-top:8px;">
+            localStorage 데이터를 초기화할 수 있어요. 초기화 후 되돌릴 수 없어요.
+          </p>
+
+          <div class="grid-2" style="margin-top:12px;">
+            <button class="btn btn-ghost" id="btnClearRecords" type="button">운동 기록 초기화</button>
+            <button class="btn btn-ghost" id="btnClearSettings" type="button">설정 초기화</button>
+          </div>
+
+          <button class="btn btn-primary" id="btnClearAll" type="button" style="margin-top:10px;">
+            전체 초기화
+          </button>
+
+          <div class="row" style="display:flex; justify-content:space-between; align-items:center; margin-top:12px;">
+            <span class="tag" id="dataTag" aria-live="polite">안전</span>
+            <span class="small" id="dataHint" style="color:var(--muted);">초기화는 확인창이 뜹니다.</span>
+          </div>
+        </section>
+
+        <section class="card" aria-labelledby="secAboutTitle">
+          <h2 id="secAboutTitle" class="section-title">정보</h2>
+
+          <div class="row" style="display:flex; justify-content:space-between; align-items:center; gap:12px; margin-top:8px;">
+            <div>
+              <div style="font-weight:900;">Planfit</div>
+              <div class="small" style="color:var(--muted);"> · 로컬 저장 기반</div>
+            </div>
+            <span class="tag">v1.0</span>
+          </div>
+
+          <div class="small" style="margin-top:10px; color:var(--muted);">
+          </div>
+        </section>
+
+      </main>
+    </div>
+
+    <footer class="footer" role="contentinfo" aria-label="하단 정보">
+        <div class="footer-inner">
+          <div class="footer-links">
+            <a href="privacy.html">개인정보처리방침</a>
+            <span class="sep" aria-hidden="true">|</span>
+            <a href="terms.html">이용약관</a>
+          </div>
+
+          <p class="footer-desc">Planfit은 더 나은 운동 루틴 경험을 위해 설계된 서비스입니다.</p>
+          <p class="footer-copy">Copyright © 2026 Planfit. All rights reserved.</p>
+        </div>
+      </footer>
+
+    <nav class="bottom-nav" aria-label="하단 메뉴">
+      <div class="bottom-nav-inner">
+        <a class="tab" href="index.html" aria-label="홈">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10.5L12 3l9 7.5V21a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1z"/></svg>
+          <span>홈</span>
+        </a>
+
+        <a class="tab" href="menu.html" aria-label="메뉴">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+          <span>메뉴</span>
+        </a>
+
+        <a class="tab" href="start.html" aria-label="시작">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v18M3 12h18"/></svg>
+          <span>시작</span>
+        </a>
+
+        <a class="tab active" href="mypage.html" aria-current="page" aria-label="마이">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 12a5 5 0 1 0-5-5 5 5 0 0 0 5 5zm0 2c-4 0-8 2-8 5v1h16v-1c0-3-4-5-8-5z"/></svg>
+          <span>마이</span>
+        </a>
+      </div>
+    </nav>
+
+  </div>
+
+  <script src="js/settings.js"></script>
+</body>
+</html>
