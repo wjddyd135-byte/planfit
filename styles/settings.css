@@ -1,32 +1,28 @@
 @charset "utf-8";
 
-:root{ --accent: var(--mint); }
+:root{ --accent: var(--mint, #8FD1C7); }
 
 :root[data-accent="mint"]   { --accent: #8FD1C7; }
 :root[data-accent="blue"]   { --accent: #6F86A6; }
 :root[data-accent="purple"] { --accent: #8B7CCB; }
 :root[data-accent="orange"] { --accent: #F0A35E; }
 
+
 .side-nav a.active{
+  background: rgba(143,209,199,.14); 
   background: color-mix(in srgb, var(--accent) 14%, transparent);
   color: var(--accent);
 }
+
 a.tab.active{
   color: var(--accent);
+  background: rgba(143,209,199,.14);
   background: color-mix(in srgb, var(--accent) 14%, transparent);
-  border: 1px solid color-mix(in srgb, var(--accent) 18%, transparent);
+  border: 1px solid rgba(143,209,199,.18); 
+  border-color: color-mix(in srgb, var(--accent) 18%, transparent);
 }
 
 .btn-primary{ background: var(--accent); color:#0b1012; }
-.tag{
-  color: var(--accent);
-  border: 1px solid color-mix(in srgb, var(--accent) 22%, var(--line));
-  background: color-mix(in srgb, var(--accent) 10%, transparent);
-}
-
-body.compact .card{ padding: 12px; }
-body.compact .card + .card{ margin-top: 10px; }
-body.compact .main{ padding-top: 14px; padding-bottom: calc(var(--navH) + 14px); }
 
 .tag{
   display:inline-flex;
@@ -34,28 +30,36 @@ body.compact .main{ padding-top: 14px; padding-bottom: calc(var(--navH) + 14px);
   justify-content:center;
 
   min-height:28px;
-  padding:6px 12px;         
+  padding:6px 12px;
   border-radius:999px;
 
   font-size:12px;
   font-weight:700;
-  white-space:nowrap;     
+  white-space:nowrap;
 
+  background: rgba(143,209,199,.20); 
   background: color-mix(in srgb, var(--accent) 20%, transparent);
-  color: var(--accent);     
-  border:1px solid color-mix(in srgb, var(--accent) 35%, var(--line));
+  color: var(--accent);
+
+  border: 1px solid rgba(143,209,199,.35); 
+  border-color: color-mix(in srgb, var(--accent) 35%, var(--line, rgba(255,255,255,.12)));
 }
-select {
-  color: var(--text);            
+
+body.compact .card{ padding: 12px; }
+body.compact .card + .card{ margin-top: 10px; }
+body.compact .main{ padding-top: 14px; padding-bottom: calc(var(--navH) + 14px); }
+
+select{
+  color: var(--text);
   background-color: var(--panel-2);
 }
 
-select option {
-  color: #0f1114;                
-  background-color: #ffffff;     
+select option{
+  color: #0f1114;
+  background-color: #ffffff;
 }
 
-select option:checked {
+select option:checked{
   background-color: #e9eef5;
   color: #0f1114;
 }

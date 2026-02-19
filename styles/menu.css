@@ -1,8 +1,11 @@
 @charset "utf-8";
 
-
 .menu-page .container{
   max-width: 980px;
+}
+
+.menu-page .main .container{
+  padding-bottom: 28px;
 }
 
 .menu-page .h1{
@@ -11,10 +14,27 @@
   letter-spacing: -0.2px;
   margin: 0;
 }
+
 .menu-page .small{
   color: var(--muted);
 }
 
+.menu-page .sub{
+  margin: 6px 0 0;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+/* spacing */
+.menu-page .container > h2.h1{
+  margin-top: 28px !important;
+}
+
+.menu-page .container > p.small{
+  margin: 8px 0 0;
+}
+
+/* grid */
 .menu-page .grid-2{
   display: grid;
   gap: 16px;
@@ -61,13 +81,16 @@
 }
 
 .menu-page .card .thumb{
+  position: relative; 
   height: 160px;
   border-radius: 22px 22px 0 0;
   overflow: hidden;
+
   background: rgba(255,255,255,.04);
   border: none;
   margin: 0;
 }
+
 .menu-page .card .thumb.thumb-sm{
   height: 140px;
 }
@@ -77,6 +100,7 @@
   height: 100%;
   display: block;
   object-fit: cover;
+
   transform: scale(1);
   transition: transform .35s ease;
 }
@@ -91,11 +115,16 @@
   left:0; right:0; top:0;
   height: 160px;
   pointer-events:none;
-  background: radial-gradient(80% 60% at 50% 20%, rgba(143,209,199,.18), transparent 70%);
+
+  background: radial-gradient(
+    80% 60% at 50% 20%,
+    rgba(143,209,199,.18),
+    transparent 70%
+  );
+
   mix-blend-mode: screen;
   opacity: .9;
 }
-
 .menu-page .grid-2 > .card > div:last-child{
   padding: 16px;
 }
@@ -107,18 +136,13 @@
   letter-spacing: -0.1px;
 }
 
-/* sub/small */
-.menu-page .sub{
-  margin: 6px 0 0;
-  font-size: 13px;
-  color: var(--muted);
-}
 .menu-page .grid-2 > .card .small{
   margin-top: 6px;
   font-size: 12px;
   opacity: .95;
 }
 
+/* chip */
 .menu-page .chip{
   display: inline-flex;
   align-items: center;
@@ -135,28 +159,46 @@
   color: #dff7f3;
   white-space: nowrap;
 }
-
-.menu-page .container > h2.h1{
-  margin-top: 28px !important;
-}
-.menu-page .container > p.small{
-  margin: 8px 0 0;
-}
-
-.menu-page .grid-2 > .card:not(:has(.thumb)){
+.menu-page .grid-2 > .card.card--no-thumb{
   padding: 16px;
 }
-@supports not selector(:has(*)){
 
-  .menu-page .grid-2 > .card{
-    padding: 0;
-  }
-}
-
-.menu-page .grid-2 > .card:not(:has(.thumb)) > div{
+.menu-page .grid-2 > .card.card--no-thumb > div{
   padding: 0;
 }
 
-.menu-page .main .container{
-  padding-bottom: 28px;
+.menu-page .grid-2 > .card.card--no-thumb > div:last-child{
+  padding: 0;
+}
+
+.menu-page .grid-2 > .card > div:last-child{
+  padding: 20px 22px; 
+}
+
+.menu-page .grid-2 > .card.card--no-thumb{
+  padding: 20px 22px;
+}
+
+.menu-page .grid-2 > .card > div:last-child > *{
+  padding-left: 4px;
+}
+
+.menu-page .grid-2 > .card > div:last-child > div:first-child{
+  margin-left: 2px;
+}
+
+.menu-page .grid-2 > .card{
+  padding: 20px 22px;
+}
+
+.menu-page .grid-2 > .card > *{
+  margin-left: 2px;
+}
+
+.menu-page .grid-2 > .card > div:first-child{
+  line-height: 1.3;
+}
+.menu-page .grid-2 > .card .sub,
+.menu-page .grid-2 > .card .small{
+  line-height: 1.45;
 }
